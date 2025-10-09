@@ -41,7 +41,7 @@ class EnemyCharacter {
 }
 
 
-public class Old {
+public class main {
 
     static Map<String,String[]> enemies = Map.of(
             "Forest", new String[]{"goblin","Wolf"},
