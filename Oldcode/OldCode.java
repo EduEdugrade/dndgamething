@@ -276,7 +276,7 @@ public class main {
                 } else while (inVillage) { {
                     System.out.println("""
                     You arrive at the village, there appears to be a some places that could be useful!
-                    1: Blacksmith, will sell you weapons.
+                    1: Blacksmith, will sell you game.weapons.
                     2: Temple, the gods blessings could be useful on your adventure. Also for a fee, apparently.
                     3: An Inn, spending the night there could give you time to tend to your wounds.
                     4: Continue on your adventure
@@ -286,7 +286,7 @@ public class main {
 
                     switch (villageLocation) {
                         case "Blacksmith":
-                            System.out.println("Hi there, I'm the village blacksmith, got some weapons for sale that will help you deal some more damage!");
+                            System.out.println("Hi there, I'm the village blacksmith, got some game.weapons for sale that will help you deal some more damage!");
                             System.out.println("Don't worry about your class or anything, I'm sure if you hold a sword the right way it'll cast some spells!");
                             System.out.println("Got 3 swords available!");
                             System.out.println("1. [Iron sword] Price: "+Stylesheet.YELLOW+Stylesheet.BOLD+"15g"+Stylesheet.RESET);

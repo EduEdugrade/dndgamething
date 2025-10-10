@@ -8,42 +8,42 @@ Först och främst kan jag kolla på betygskriterna under G och se vad jag komme
 T.ex, en av de första objekten att nå för mig är att omstrukturera hur min player/enemies är uppbyggda.
 
 # Steg 1. (Godkänt 1. Klassstruktur och OOP-koncept - 2. Obligatoriska klasser)
----Character(Abstract)
+---game.characters.Character(Abstract)
 
-------Character(Abstract)>Monster(Abstract)
+------game.characters.Character(Abstract)>game.monsters.Monster(Abstract)
 
----------Monster(Abstract)>Boss(Concrete)
+---------game.monsters.Monster(Abstract)>game.monsters.Boss(Concrete)
 
----Character(Abstract)>Hero(Concrete)
+---game.characters.Character(Abstract)>game.characters.Hero(Concrete)
 
-Character behöver enligt detta egenskaperna som både Monster, Boss, och Hero vill ärva.
+game.characters.Character behöver enligt detta egenskaperna som både game.monsters.Monster, game.monsters.Boss, och game.characters.Hero vill ärva.
 Dessa egenskaperna skulle då vara HP, Dmg, en attack() method.
 
 Pseudokod och sånt här nere:
 
-public abstract class Character {...}
-public abstract class Monster extends Character {...}
-public class Boss extends Monster {...}
-public class Hero extends Character {...}
+public abstract class game.characters.Character {...}
+public abstract class game.monsters.Monster extends game.characters.Character {...}
+public class game.monsters.Boss extends game.monsters.Monster {...}
+public class game.characters.Hero extends game.characters.Character {...}
 
-**Character egenskaper som alla vill dela:**
+**game.characters.Character egenskaper som alla vill dela:**
 
 Attack(), hp, dmg.
 
-**Monster egenskaper:**
+**game.monsters.Monster egenskaper:**
 
 Namn
 
-**Boss egenskaper:**
+**game.monsters.Boss egenskaper:**
 
 En override attack() method för 2x damage funktionalitet.
 
-**Hero egenskaper:**
+**game.characters.Hero egenskaper:**
 
 XP och en override attack() method för weapondmgbonuis funktionalitet.
 
 # Steg 2. (3. Funktionalitet)
-Hero börjar vid lvl 1, max lvl 10. 100xp = lvl up.
+game.characters.Hero börjar vid lvl 1, max lvl 10. 100xp = lvl up.
 
 Varje level behöver 300xp t.ex.
 
@@ -51,6 +51,10 @@ om lvl 10 nås vinner man.
 
 Stridssystem är turbaserat, vad jag hade innan bör fungera.
 
-Encounter system kan implementeras likt vad jag hade.
+game.systems.Encounter system kan implementeras likt vad jag hade.
 
-Boss special attack är likt vad jag hade med min dnd-class specifika attack.
+game.monsters.Boss special attack är likt vad jag hade med min dnd-class specifika attack.
+
+
+# Steg något!
+

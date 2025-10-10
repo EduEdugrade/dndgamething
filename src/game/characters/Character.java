@@ -1,3 +1,5 @@
+package game.characters;
+
 public abstract class Character {
     protected String name;
     protected int hp;
@@ -15,7 +17,22 @@ public abstract class Character {
         hp = hp - dmg;
     }
 
-    public void attack(Character enemy) {
-        enemy.takeDamage(dmg);
+    public String getName() {
+        return name;
+    };
+    public int getHp() {
+        return hp;
+    };
+    public int getMaxHp() {
+        return maxHp;
+    };
+    public int getDmg() {
+        return dmg;
+    };
+
+    public void setName(String inputName) {
+        this.name = inputName;
     }
+
+    public abstract void attack(Character target);
 }
