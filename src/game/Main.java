@@ -13,10 +13,10 @@ public class Main {
             System.out.println("What is your name? ");
             String name = inputTracker.nextLine();
 
-            player.name = name;
+
             player.setName(name);
 
-            System.out.println(player.name);
+            System.out.println(player.getName());
             Encounter.encounter(player);
         }
 }

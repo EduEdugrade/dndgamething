@@ -8,4 +8,12 @@ public class Weapon {
         this.name = name;
         this.dmg = dmg;
     }
+
+    public int getDmg() {
+        return this.dmg;
+    }
+
+    public String getName() {
+        return this.name;
+    }
 }

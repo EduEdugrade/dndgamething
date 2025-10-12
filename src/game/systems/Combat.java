@@ -1,8 +1,7 @@
 package game.systems;
-import game.characters.Character;
 import game.characters.Hero;
 import game.monsters.Monster;
-import game.weapons.Weapon;
+
 
 public class Combat {
 
@@ -12,6 +11,9 @@ public class Combat {
             if(enemy.getHp() > 0) {
                 enemy.attack(player);
             }
+
         }
+        player.gainXp();
+        player.lvlUp();
     }
 }
