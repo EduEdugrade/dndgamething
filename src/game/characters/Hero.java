@@ -8,10 +8,11 @@ public class Hero extends Character {
     protected String name;
     protected int lvl = 1;
     protected int xp = 0;
+    protected int gold = 0;
     protected Weapon weapon;
 
     public Hero() {
-        super("heroname", 100, 100, 2);
+        super("", 30, 30, 2);
         this.weapon = new RustySword();
     }
 
@@ -22,7 +23,28 @@ public class Hero extends Character {
     }
 
     public void gainXp() {
-        xp = xp + 101;
+        xp = xp + 50;
+    }
+
+    public void heal() {
+        hp = maxHp;
+    }
+    public int getGold() {
+        return gold;
+    }
+    public int getLvl() {
+        return lvl;
+    }
+
+    public Object getWeapon() {
+        return weapon.getName();
+    }
+
+    public void setGold(int amount) {
+        this.gold = amount;
+    }
+    public void setWeapon(Weapon weapon) {
+        this.weapon = weapon;
     }
 
     public void lvlUp() {
@@ -44,6 +66,7 @@ public class Hero extends Character {
             System.out.println(Stylesheet.YELLOW + oldHp + " hp → " + maxHp + " hp" + Stylesheet.RESET);
             System.out.println("----------------------------------------");
             System.out.println();
+            xp = 0;
         }
     }
 }

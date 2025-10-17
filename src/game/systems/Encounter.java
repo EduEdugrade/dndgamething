@@ -1,7 +1,6 @@
 package game.systems;
 import game.characters.Hero;
-import game.monsters.Goblin;
-import game.monsters.Boss;
+import game.monsters.*;
 
 import java.util.*;
 
@@ -9,22 +8,36 @@ public class Encounter {
 
     //MAIN CODE BLOCK//
     public static void encounter(Hero player) {
-        Goblin enemy = new Goblin();
+        LinkedList<Monster> monsters = new LinkedList<>();
+        monsters.add(new Goblin());
+        monsters.add(new Wolf());
+        monsters.add(new CaveSpider());
+        monsters.add(new Bear());
+        monsters.add(new Skeleton());
+        monsters.add(new Zombie());
+        monsters.add(new Troll());
+        monsters.add(new Necromancer());
+
         Boss boss = new Boss();
+        Monster enemy;
 
         Random r= new Random();
         int randomNumber = r.nextInt(101);
+        //70% chance
         if(randomNumber < 70) {
-            System.out.println("Regular fight!");
+            int randomMonster = r.nextInt(monsters.size()-1);
+            enemy = monsters.get(randomMonster);
+            System.out.println("You encountered a " + enemy.getName());
             Combat.combat(player, enemy);
-            //70% chance
-        } else if(randomNumber < 80) {
-            System.out.println("Boss fight!");
-            Combat.combat(player, boss); //10% chance
-        } else if(randomNumber < 100) {
-            System.out.println("Friendly Encounter!");
-            //Friendly encounter 20% chance
+        } //10% chance
+        else if(randomNumber < 80) {
+            System.out.println("You encountered a " + boss.getName());
+            Combat.combat(player, boss);
+        } //20% chance
+        else if(randomNumber <= 100) {
+            FriendlyEncounter.friendlyEncounter(player);
+            return;
         }
-
+        return;
     }
 }

@@ -6,6 +6,7 @@ public abstract class Character {
     protected int maxHp;
     protected int dmg;
 
+
     public Character(String name, int hp, int maxHp, int dmg) {
         this.name = name;
         this.hp = hp;
@@ -30,9 +31,13 @@ public abstract class Character {
         return dmg;
     };
 
+
+
     public void setName(String inputName) {
         this.name = inputName;
     }
+
+
 
     public abstract void attack(Character target);
 }

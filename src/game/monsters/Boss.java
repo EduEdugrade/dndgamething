@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class Boss extends Monster {
     public Boss() {
-        super("Boss enemy", 50, 50, 2);
+        super(Stylesheet.RED+Stylesheet.BOLD+"FIVE HUNDRED FIFTY FOUR KOBOLDS!!!"+Stylesheet.RESET, 55, 55, 4);
     }
 
 
